@@ -18,7 +18,7 @@ class WelcomeController extends Controller
         $services = Service::all(); // ✅ सेवा डाटा ल्याउने // 🔸 Service model बाट सबै data ल्याउने
         $members = Member::latest()->get(); // 🔸 Member model बाट सबै data ल्याउने
         $turismPlaces = TurismPlace::all(); // 🔸 TurismPlace model बाट सबै data ल्याउने
-        return view('welcome', compact('company', 'notices', 'services', 'members', 'turismPlaces')); // 🔸 welcome.blade.php मा data पठाउने
+        return view('welcome', compact('company', 'notices', 'services',  'turismPlaces')); // 🔸 welcome.blade.php मा data पठाउने
     }
 }
 

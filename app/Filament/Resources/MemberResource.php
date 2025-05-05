@@ -24,17 +24,26 @@ class MemberResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')->required(),
-            Forms\Components\TextInput::make('post')->required(),
-            Forms\Components\TextInput::make('rank')->required(),
-            Forms\Components\FileUpload::make('image')
-                                    ->label('image')
-                                    ->image() // Specify that this is an image upload
-                                    ->maxSize(500) // Set max size to 500 KB
-                                    ->preserveFilenames() // Preserve original filename
-                                    ->disk('public') // Specify the disk to store the file
-                                    ->directory('images'), // Specify the directory to store the file
-            Forms\Components\TextInput::make('phone')->nullable(),
-            Forms\Components\TextInput::make('email')->nullable(),
+                Forms\Components\Select::make('post')
+                                        ->options([
+                                            'minister' => 'Minister',
+                                            'head' => 'Head of Office',
+                                            'infoofficer' => 'Information Officer',
+                                            'secretary' => 'Secretary',
+                                            'person' => 'Spokes Person',
+                                        ])
+                                         ->native(false)
+                                         ->required(),
+                Forms\Components\TextInput::make('rank')->required(),
+                Forms\Components\FileUpload::make('image')
+                                        ->label('image')
+                                        ->image() // Specify that this is an image upload
+                                        ->maxSize(500) // Set max size to 500 KB
+                                        ->preserveFilenames() // Preserve original filename
+                                        ->disk('public') // Specify the disk to store the file
+                                        ->directory('images'), // Specify the directory to store the file
+                Forms\Components\TextInput::make('phone')->nullable(),
+                Forms\Components\TextInput::make('email')->nullable(),
             ]);
     }
 
