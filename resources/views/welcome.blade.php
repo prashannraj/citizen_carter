@@ -210,43 +210,46 @@
                                                 <div class="sub-head">
                                                     <h6 class="text-white mb-0 ">माननीय मन्त्री</h6>
                                                 </div>
+                                                @foreach($ministers as $member)
                                                 <div class="card mt-1">
-                                                    <img src="https://citizencharter.kathmandu.gov.np/storage/employee/blnathara_shaha/O3knMMHiZ0pZRLYMNM7DL7NfPoW0N8znUNJrEXBS.png" class="card-img-top" alt="बालेन्द्र शाह">
+                                                    <img src="{{ asset('storage/' . $member->image) }}" alt="{{ $member->name }}" style="height: 110px; width: 100%;">
                                                     <div class="card-body text-center">
-                                                        <h6 class="card-title">
-                                                        मा. सकिल अलि मियाँ</h6>
+                                                        <h6 class="card-title">{{ $member->name }}</h6>
                                                         <h6 class="card-text"><i class="fa fa-phone"></i>
-                                                            9851279900 </h6>
+                                                            {{ $member->phone }} </h6>
                                                     </div>
                                                 </div>
+                                                @endforeach
                                             </div>
                                                         <div>
                                                 <div class="sub-head">
                                                     <h6 class="text-white mb-0 ">कार्यालय प्रमुख</h6>
                                                 </div>
+                                                @foreach($heads as $member)
                                                 <div class="card mt-1">
-                                                    <img src="https://citizencharter.kathmandu.gov.np/storage/employee/saraja_garagai/UU6zGITLYQy1N4LDrkbe0HnAZWZByOnmq0BxElsi.png" class="card-img-top" alt="सरोज गुरागाँइ">
+                                                    <img src="{{ asset('storage/' . $member->image) }}" class="card-img-top" alt="{{ $member->name }}" style="height: 110px; width: 100%;">
                                                     <div class="card-body text-center">
-                                                        <h6 class="card-title">
-                                                            रोहित कुमार परसैला</h6>
+                                                        <h6 class="card-title">{{ $member->name }}</h6>
                                                         <h6 class="card-text"><i class="fa fa-phone"></i>
-                                                            01-4168717 </h6>
+                                                            {{ $member->phone }} </h6>
                                                     </div>
                                                 </div>
+                                                @endforeach
                                             </div>
                                                         <div>
                                                 <div class="sub-head">
-                                                    <h6 class="text-white mb-0 ">सहायक प्रवक्ता</h6>
+                                                    <h6 class="text-white mb-0 ">प्रदेश सचिव</h6>
                                                 </div>
+                                                @foreach($secretaries as $member)
                                                 <div class="card mt-1">
-                                                    <img src="https://citizencharter.kathmandu.gov.np/storage/employee/thharab_kamara_kafal/xze6DQqINZnwgf0y8u9YrrQrmaipmYTuiium1WwS.jpg" class="card-img-top" alt="ध्रुब कुमार काफ्ले">
+                                                    <img src="{{ asset('storage/' . $member->image) }}" class="card-img-top" alt="{{ $member->name }}" style="height: 110px; width: 100%;">
                                                     <div class="card-body text-center">
-                                                        <h6 class="card-title">
-                                                            ध्रुब कुमार काफ्ले</h6>
+                                                        <h6 class="card-title">{{ $member->name }}</h6>
                                                         <h6 class="card-text"><i class="fa fa-phone"></i>
-                                                            9851126903 </h6>
+                                                            {{ $member->phone }} </h6>
                                                     </div>
                                                 </div>
+                                                @endforeach
                                             </div>
                                                 </div>
                                 </div>
@@ -257,43 +260,46 @@
                                                 <div class="sub-head">
                                                     <h6 class="text-white mb-0 ">प्रटकिय गाइड</h6>
                                                 </div>
+                                                @foreach($spokespersons as $member)
                                                 <div class="card mt-1">
-                                                    <img src="https://citizencharter.kathmandu.gov.np/storage/employee/sanata_dagal/p6PEzSDhw9Y1cwrK1sAmp2U9386g8j4gTiqSevN0.png" class="card-img-top" alt="सुनिता डंगोल">
+                                                    <img src="{{ asset('storage/' . $member->image) }}" class="card-img-top" alt="{{ $member->name }}" style="height: 110px; width: 100%;">
                                                     <div class="card-body text-center">
-                                                        <h6 class="card-title">
-                                                            सुनिता डंगोल</h6>
+                                                        <h6 class="card-title">{{ $member->name }}</h6>
                                                         <h6 class="card-text"><i class="fa fa-phone"></i>
-                                                            9851279899 </h6>
+                                                            {{ $member->phone }} </h6>
                                                     </div>
                                                 </div>
+                                                @endforeach
                                             </div>
                                                         <div>
                                                 <div class="sub-head">
                                                     <h6 class="text-white mb-0 ">प्रवक्ता</h6>
                                                 </div>
+                                                @foreach($spokespersons as $member)
                                                 <div class="card mt-1">
-                                                    <img src="https://citizencharter.kathmandu.gov.np/storage/employee/navana_mananathhara/lv8IAPEdbQveHtISaWsyLEUTLeUzfunsW6YGxxDA.jpg" class="card-img-top" alt="नवीन मानन्धर">
+                                                    <img src="{{ asset('storage/' . $member->image) }}" class="card-img-top" alt="{{ $member->name }}"  style="height: 110px; width: 100%;">
                                                     <div class="card-body text-center">
-                                                        <h6 class="card-title">
-                                                            नवीन मानन्धर</h6>
+                                                        <h6 class="card-title">{{ $member->name }}</h6>
                                                         <h6 class="card-text"><i class="fa fa-phone"></i>
-                                                            9851279917 </h6>
+                                                            {{ $member->phone }} </h6>
                                                     </div>
                                                 </div>
+                                                @endforeach
                                             </div>
                                                         <div>
                                                 <div class="sub-head">
                                                     <h6 class="text-white mb-0 ">सूचना अधिकारी</h6>
                                                 </div>
+                                                @foreach($infoofficers as $member)
                                                 <div class="card mt-1">
-                                                    <img src="https://citizencharter.kathmandu.gov.np/storage/employee/bsanata_aacaraya/8HqBVJLdDoKz0K7DPH84LXzJVr0nigW84magNXvF.png" class="card-img-top" alt="बसन्त आचार्य">
+                                                    <img src="{{ asset('storage/' . $member->image) }}" class="card-img-top" alt="{{ $member->name }}" style="height: 110px; width: 100%;">
                                                     <div class="card-body text-center">
-                                                        <h6 class="card-title">
-                                                            बसन्त आचार्य</h6>
+                                                        <h6 class="card-title">{{ $member->name }}</h6>
                                                         <h6 class="card-text"><i class="fa fa-phone"></i>
-                                                            9851087938 </h6>
+                                                            {{ $member->phone }} </h6>
                                                     </div>
                                                 </div>
+                                                @endforeach
                                             </div>
                                                 </div>
                             </div>

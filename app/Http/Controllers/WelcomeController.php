@@ -16,9 +16,16 @@ class WelcomeController extends Controller
         $company = Company::first(); // Fetch the company data
         $notices = Notice::latest()->get(); // 🔸 Notice model बाट सबै data ल्याउने
         $services = Service::all(); // ✅ सेवा डाटा ल्याउने // 🔸 Service model बाट सबै data ल्याउने
-        $members = Member::latest()->get(); // 🔸 Member model बाट सबै data ल्याउने
+        $members = Member::all(); // 🔸 Member model बाट सबै data ल्याउने
+        $ministers = Member::where('post', 'minister')->get();
+        $heads = Member::where('post', 'head')->get();
+        $infoofficers = Member::where('post', 'infoofficer')->get();
+        $secretaries = Member::where('post', 'secretary')->get();
+        $spokespersons = Member::where('post', 'person')->get();
+
         $turismPlaces = TurismPlace::all(); // 🔸 TurismPlace model बाट सबै data ल्याउने
-        return view('welcome', compact('company', 'notices', 'services',  'turismPlaces')); // 🔸 welcome.blade.php मा data पठाउने
+        return view('welcome', compact('company', 'notices', 'services', 'members', 'ministers',
+          'heads', 'infoofficers', 'secretaries', 'spokespersons', 'turismPlaces')); // 🔸 welcome.blade.php मा data पठाउने
     }
 }
 
