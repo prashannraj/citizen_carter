@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="QBrFj0tWELI7k3weZfi6gA4b2gF2RkrnZGfh3NSq"/>
     <title>Tourism Citizen Charter</title>
+    <link rel="icon" href="{{ asset('storage/' . $company->favicon) }}" type="image/x-icon">
     <link rel="stylesheet" href="https://citizencharter.kathmandu.gov.np/assets/frontend/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://citizencharter.kathmandu.gov.np/assets/frontend/css/style.css"/>
     <link rel="stylesheet" href="https://citizencharter.kathmandu.gov.np/assets/frontend/css/utils.css"/>
@@ -58,7 +59,7 @@
                         <i class="fa-solid fa-phone" href="tel:014225610"></i> - 014225610<br>
                         <i class="fa-solid fa-envelope"></i> - <br>
                         <i class="fa-solid fa-calendar"></i> <span class="mukta fw-bold"><span class="date-text">
-    २०८२ साल बैशाख २२ गते, सोमबार
+    २०८२ साल बैशाख २६ गते, शुक्रबार
 </span>
 </span><br>
                         <i class="fa-solid fa-clock"></i> <span id="clock" class="mukta fw-bold"></span>
@@ -254,7 +255,7 @@
                                     <div class="owl-carousel">
                                                         <div>
                                                 <div class="sub-head">
-                                                    <h6 class="text-white mb-0 ">नगर उप– प्रमुख</h6>
+                                                    <h6 class="text-white mb-0 ">प्रटकिय गाइड</h6>
                                                 </div>
                                                 <div class="card mt-1">
                                                     <img src="https://citizencharter.kathmandu.gov.np/storage/employee/sanata_dagal/p6PEzSDhw9Y1cwrK1sAmp2U9386g8j4gTiqSevN0.png" class="card-img-top" alt="सुनिता डंगोल">
