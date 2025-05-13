@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Models\Company;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -17,16 +18,21 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Illuminate\Support\Facades\App;
 
 class AuthPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
+        // 🔸 DB बाट कम्पनी नाम ल्याउने (null भए खाली string)
+        $companyName = Company::first()?->company_name ?? '';
+        // 🔸 Panel को नाम र logo सेट गर्ने
         return $panel
             ->default()
             ->id('auth')
             ->path('auth')
             ->login()
+            ->brandName($companyName) // ✅ Laravel को सट्टा कम्पनी नाम
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -55,4 +61,9 @@ class AuthPanelProvider extends PanelProvider
                 Authenticate::class,
             ]);
     }
+
+            public function boot(): void
+        {
+            App::setLocale('ne'); // यो सबै request को लागि default भाषा नेपाली बनाउँछ
+        }
 }
