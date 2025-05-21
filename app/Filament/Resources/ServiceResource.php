@@ -30,6 +30,8 @@ class ServiceResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('service_fee')
                     ->required(),
+                Forms\Components\TextInput::make('section')
+                    ->required(),
                 Forms\Components\TextInput::make('time')
                     ->required(),
             ]);
@@ -44,6 +46,8 @@ class ServiceResource extends Resource
                 Tables\Columns\TextColumn::make('service_fee')
                     ->numeric()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('section')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('time')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
@@ -75,6 +79,13 @@ class ServiceResource extends Resource
             //
         ];
     }
+    public static function getWidgets(): array
+    {
+        return [
+           
+        ];
+    }
+
 
     public static function getPages(): array
     {

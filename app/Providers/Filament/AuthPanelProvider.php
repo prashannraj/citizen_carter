@@ -19,13 +19,19 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Illuminate\Support\Facades\App;
+use App\Filament\Widgets\LanguageSwitcher;
+use Illuminate\Support\Facades\Schema;
+use App\Filament\Widgets\ServiceOverviewWidget;
 
 class AuthPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
-        // 🔸 DB बाट कम्पनी नाम ल्याउने (null भए खाली string)
+        // 🔐 Table छ कि छैन भन्ने जाँच
+    $companyName = '';
+    if (Schema::hasTable('companies')) {
         $companyName = Company::first()?->company_name ?? '';
+        }
         // 🔸 Panel को नाम र logo सेट गर्ने
         return $panel
             ->default()
@@ -43,8 +49,10 @@ class AuthPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
+                LanguageSwitcher::class,
+                \App\Filament\Widgets\ServiceStatsWidget::class,
                 Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
+               // Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,

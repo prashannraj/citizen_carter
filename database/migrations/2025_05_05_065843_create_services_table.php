@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('service');
             $table->text('content'); // For the editor
-            $table->decimal('service_fee', 10, 2); // Adjust precision as needed
+            $table->string('service_fee'); // Adjust precision as needed
+            $table->string('section'); // You can change this to a different type if needed
             $table->string('time'); // You can change this to a different type if needed
             $table->timestamps();
         });

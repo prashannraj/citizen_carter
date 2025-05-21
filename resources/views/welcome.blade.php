@@ -129,7 +129,7 @@
                     {!! nl2br(e($service->content)) !!}
                 </td>
                 <td class="text-start" width="15%">{{ $service->service_fee }}</td>
-                <td class="text-start" width="15%">{{ $service->time }}</td>
+                <td class="text-start" width="15%">{{ $service->section }},</br>{{ $service->time }}</td>
             </tr>
         @endforeach
     </tbody>
