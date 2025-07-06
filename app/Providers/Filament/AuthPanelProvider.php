@@ -27,10 +27,16 @@ class AuthPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
-        // 🔐 Table छ कि छैन भन्ने जाँच
-    $companyName = '';
-    if (Schema::hasTable('companies')) {
-        $companyName = Company::first()?->company_name ?? '';
+        // 🔸 DB बाट कम्पनी नाम ल्याउने (null भए खाली string)
+        $companyName = '';
+        $companyAddress = '';
+        $companyLogo = '';
+
+        if (Schema::hasTable('companies')) {
+            $company = Company::first();
+            $companyName = $company?->company_name ?? '';
+            $companyAddress = $company?->address ?? '';
+            $companyLogo = $company?->logo ? asset('storage/' . $company->logo) : '';
         }
         // 🔸 Panel को नाम र logo सेट गर्ने
         return $panel
@@ -38,9 +44,11 @@ class AuthPanelProvider extends PanelProvider
             ->id('auth')
             ->path('auth')
             ->login()
+            ->brandLogo($companyLogo) // सानो लोगो
+            ->brandLogoHeight('36px') // लोगो साइज
             ->brandName($companyName) // ✅ Laravel को सट्टा कम्पनी नाम
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Sky,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
